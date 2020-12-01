@@ -8,7 +8,7 @@ switch($action){
 	case 'demandeConnexion':{
 		include("vues/v_connexion.php");
 		break;
-	}
+	}//proute
 	case 'valideConnexion':{
 		$login = $_REQUEST['login'];
 		$mdp = $_REQUEST['mdp'];
