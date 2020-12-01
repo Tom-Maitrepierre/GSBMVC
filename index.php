@@ -19,6 +19,9 @@ switch($uc){
 	case 'etatFrais' :{
 		include("controleurs/c_etatFrais.php");break; 
 	}
+	case 'modifMdp' :{
+		include("controleurs/c_modifMdp.php");break; 
+	}
 }
 include("vues/v_pied.php") ;
 ?>

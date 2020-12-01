@@ -63,6 +63,16 @@ class PdoGsb{
 		return $ligne;
 	}
 
+	public function getMdpVisiteur($mdp){
+		$strReq = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
+		where visiteur.mdp=:mdp";
+		$req = $this->monPdo->prepare($strReq);
+		$req->bindParam(':mdp', $mdp);
+		$req->execute();
+		$ligne  = $req->fetch();
+		return $ligne;
+	}
+
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
  * concernées par les deux arguments
@@ -352,6 +362,8 @@ class PdoGsb{
 			
             return $montant;
 		}
+
+		
 
 	}
 	?>
