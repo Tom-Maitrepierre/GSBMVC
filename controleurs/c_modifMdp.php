@@ -20,9 +20,25 @@ switch($action){
         elseif($_REQUEST['nouveauMdp'] != $_REQUEST['mdpVerif']){
             ajouterErreur("Les mots de passe ne correspondent pas","mdpVerif");
             include("vues/v_modifMdp.php");
-        }
+		}
+		elseif(($_REQUEST['nouveauMdp'] == $_REQUEST['mdpVerif'] && $_REQUEST['mdpVerif'] == $_REQUEST['ancienMdp']))
+		{
+			ajouterErreur("Le mot de passe ne change pas","mdpVerif");
+            include("vues/v_modifMdp.php");
+		}
+		elseif(strlen($_REQUEST['nouveauMdp'])<8)
+		{
+			ajouterErreur("Le mot de passe doit avoir minimum 8 caractères","nouveauMdp");
+            include("vues/v_modifMdp.php");
+		}
+		/*elseif(preg_match($_REQUEST['nouveauMdp']))
+		{
+			
+		}*/
 		else{
-			/* modif mdp dans BDD*/
+			$nvMdp = $_REQUEST['nouveauMdp'];
+			$idVisiteur = $_SESSION['idVisiteur'];
+			$pdo->majMdp($nvMdp, $idVisiteur);
 			Echo "mot de passe changé avec succès";
 		}
 		break;

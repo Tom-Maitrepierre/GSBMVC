@@ -6,6 +6,13 @@
             <h4>
                 <?php echo $_SESSION['prenom'] . "  " . $_SESSION['nom']  ?>
             </h4>
+            <p>
+                 <?php echo 'role : '.$_SESSION['role']?><br>
+            
+                 <?php echo 'region : '.$_SESSION['region']?><br>
+           
+                 <?php echo 'secteur : '. $_SESSION['secteur']?><br>
+            </p>
 
             <ul class="list-unstyled">
 

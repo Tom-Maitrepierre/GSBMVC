@@ -53,21 +53,33 @@ class PdoGsb{
  * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 */
 	public function getInfosVisiteur($login, $mdp){
+		$hachMdp =  hash ("sha256" , $mdp); 
 		$strReq = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
-		where visiteur.login=:login and visiteur.mdp=:mdp";
+		where visiteur.login=:login and visiteur.mdp=:mdp";	
 		$req = $this->monPdo->prepare($strReq);
 		$req->bindParam(':login', $login);
-		$req->bindParam(':mdp', $mdp);
+		$req->bindParam(':mdp', $hachMdp);
 		$req->execute();
 		$ligne  = $req->fetch();
+		
+		return $ligne;
+	}
+
+	public function getInfoVaffe(){
+		$strReq = "select tra_role, reg_nom, sec_nom, sec_code, tra_reg from vaffectation";	
+		$req = $this->monPdo->prepare($strReq);
+		$req->execute();
+		$ligne  = $req->fetch();
+		
 		return $ligne;
 	}
 
 	public function getMdpVisiteur($mdp){
+		$hachMdp =  hash ("sha256" , $mdp);
 		$strReq = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
 		where visiteur.mdp=:mdp";
 		$req = $this->monPdo->prepare($strReq);
-		$req->bindParam(':mdp', $mdp);
+		$req->bindParam(':mdp', $hachMdp);
 		$req->execute();
 		$ligne  = $req->fetch();
 		return $ligne;
@@ -362,8 +374,15 @@ class PdoGsb{
 			
             return $montant;
 		}
+		
+		public function majMdp($nvMdp, $idVisiteur){
+			$hachMdp =  hash ("sha256" , $nvMdp);
+			$strReq = "update visiteur set mdp = :nvMdp where id = :idVisiteur";
+			$req = $this->monPdo->prepare($strReq);
+			$req->bindParam(':idVisiteur', $idVisiteur);
+			$req->bindParam(':nvMdp', $hachMdp);
+			$req->execute();
+		}
 
 		
-
 	}
-	?>
