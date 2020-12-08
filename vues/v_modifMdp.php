@@ -1,5 +1,14 @@
 <form method="POST" action="index.php?uc=modifMdp&action=modifierMdp">
 <h2>Modification du mot de passe</h2>
+<?php
+if (isset($_REQUEST['erreurs'])) 
+    {    
+        foreach($_REQUEST['erreurs'] as $erreur)
+            {
+             echo '<h3 class="text-danger">'.$erreur.'</h3>';
+            }
+     }
+     ?>
 <br>
 <label for="ancienMdp">mot de passe actuel :</label>
 <input type="password" id="ancienMdp" name="ancienMdp"> 

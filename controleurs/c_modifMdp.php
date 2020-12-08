@@ -14,11 +14,11 @@ switch($action){
 		$mdp = $_REQUEST['ancienMdp'];
 		$visiteur = $pdo->getMdpVisiteur($mdp);
 		if($visiteur == false){
-            echo "Vous n'avez pas renseigné le bon mot de passe";
+            ajouterErreur(" n'avez pas renseigné le bon mot de passe","modifierMdp");
             include("vues/v_modifMdp.php");
         }
         elseif($_REQUEST['nouveauMdp'] != $_REQUEST['mdpVerif']){
-            echo "Les mots de passe ne correspondent pas";
+            ajouterErreur("Les mots de passe ne correspondent pas","mdpVerif");
             include("vues/v_modifMdp.php");
         }
 		else{
