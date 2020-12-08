@@ -18,10 +18,16 @@ switch($action){
 			include("vues/v_connexion.php");
 		}
 		else{
+		$vinfo = $pdo->getInfoVaffe();
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
-			connecter($id,$nom,$prenom);
+			$role = $vinfo['tra_role'];
+			$region = $vinfo['reg_nom'];
+			$secteur = $vinfo['sec_nom'];
+			$codeSecteur = $vinfo['sec_code'];
+			$codeRegion = $vinfo['tra_reg'];
+			connecter($id,$nom,$prenom, $role, $region, $secteur,$codeSecteur, $codeRegion );
 			include("vues/v_sommaire.php");
 		}
 		break;
