@@ -17,10 +17,10 @@ switch($uc){
 		include("controleurs/c_gererFrais.php");break;
 	}
 	case 'etatFrais' :{
-		include("controleurs/c_etatFrais.php");break; 
+		include("controleurs/c_etatFrais.php");break;
 	}
 	case 'modifMdp' :{
-		include("controleurs/c_modifMdp.php");break; 
+		include("controleurs/c_modifMdp.php");break;
 	}
 }
 include("vues/v_pied.php") ;
