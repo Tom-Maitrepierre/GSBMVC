@@ -19,6 +19,12 @@
                     <a href="index.php?uc=modifMdp&action=afficheVue" title="Modifier mon mot de passe">Mon mot de passe</a>
                 </li>
                 <li>
+                    <a href="index.php?uc=modifInfoPerso&action=modif" title="Modifier mes informations">Mes informations</a>
+                </li>
+                <li>
+                    <a href="index.php?uc=ajoutVisiteur&action=creer" title="Creer un nouveau visteur">Nouveau Visiteur</a>
+                </li>
+                <li>
                     <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
                 </li>
             </ul>

@@ -19,6 +19,12 @@ switch($uc){
 	case 'etatFrais' :{
 		include("controleurs/c_etatFrais.php");break; 
 	}
+	case 'modifInfoPerso' :{
+		include("controleurs/c_modifInfoPerso.php");break; 
+	}
+	case 'ajoutVisiteur' :{
+		include("controleurs/c_ajoutVisiteur.php");break; 
+	}
 	case 'modifMdp' :{
 		include("controleurs/c_modifMdp.php");break; 
 	}
