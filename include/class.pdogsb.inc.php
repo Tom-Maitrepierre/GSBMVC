@@ -387,12 +387,12 @@ class PdoGsb{
 		
 		public function getFicheFraisDelegueCL($region){
 			$strReq = "SELECT fichefrais.* FROM fichefrais INNER JOIN visiteur ON fichefrais.idVisiteur = visiteur.id 
-			INNER JOIN vaffectation ON visiteur.id = vaffectation.idVisiteur WHERE fichefrais.idEtat = 'CL' AND vaffectation.tra_role = 'Visiteur' AND vaffectation.tra_region =:region
+			INNER JOIN vaffectation ON visiteur.id = vaffectation.idVisiteur WHERE fichefrais.idEtat = 'CL' AND vaffectation.tra_role = 'Visiteur' AND vaffectation.tra_reg =:region
 			ORDER BY fichefrais.idVisiteur, fichefrais.mois DESC";
 			$req = $this->monPdo->prepare($strReq);
 			$req->bindParam(':region', $region);
 			$req->execute();
-			$laLigne  = $req->fetch();
+			$laLigne  = $req->fetchAll();
 			return $laLigne;
 		}
 
@@ -403,7 +403,7 @@ class PdoGsb{
 			$req = $this->monPdo->prepare($strReq);
 			$req->bindParam(':secteur', $secteur);
 			$req->execute();
-			$laLigne  = $req->fetch();
+			$laLigne  = $req->fetchAll();
 			return $laLigne;
 		}
 

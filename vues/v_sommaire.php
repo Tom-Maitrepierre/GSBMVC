@@ -23,6 +23,9 @@
                     <a href="index.php?uc=etatFrais&action=selectionnerMois" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
                 </li>
                 <li>
+                    <a href="index.php?uc=validerFicheDeFrais&action=afficheVue" title="Valider fiche de frais">Valider fiche de frais</a>
+                </li>
+                <li>
                     <a href="index.php?uc=modifMdp&action=afficheVue" title="Modifier mon mot de passe">Mon mot de passe</a>
                 </li>
                 <li>

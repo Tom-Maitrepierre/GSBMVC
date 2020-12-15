@@ -28,6 +28,9 @@ switch($uc){
 	case 'modifMdp' :{
 		include("controleurs/c_modifMdp.php");break;
 	}
+	case 'validerFicheDeFrais' :{
+		include("controleurs/c_validerFicheDeFrais.php");break;
+	}
 }
 include("vues/v_pied.php") ;
 
