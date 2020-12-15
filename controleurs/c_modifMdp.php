@@ -25,16 +25,28 @@ switch($action){
 		{
 			ajouterErreur("Le mot de passe ne change pas","mdpVerif");
             include("vues/v_modifMdp.php");
-		}
+		} // force mot de passe
 		elseif(strlen($_REQUEST['nouveauMdp'])<8)
 		{
 			ajouterErreur("Le mot de passe doit avoir minimum 8 caractères","nouveauMdp");
             include("vues/v_modifMdp.php");
 		}
-		/*elseif(preg_match($_REQUEST['nouveauMdp']))
+		elseif(preg_match('/[A-Z]/',$_REQUEST['nouveauMdp'])==false)
 		{
-			
-		}*/
+			ajouterErreur("Le mot de passe doit avoir minimum une lettre majuscule","nouveauMdp");
+            include("vues/v_modifMdp.php");
+		}
+		elseif(preg_match('/[a-z]/',$_REQUEST['nouveauMdp'])==false)
+		{
+			ajouterErreur("Le mot de passe doit avoir minimum une lettre minuscule","nouveauMdp");
+            include("vues/v_modifMdp.php");
+		}
+		elseif(preg_match('~[0-9]~',$_REQUEST['nouveauMdp'])==false)
+		{
+			ajouterErreur("Le mot de passe doit avoir minimum un chiffre","nouveauMdp");
+            include("vues/v_modifMdp.php");
+		} // fin force mot de passe
+		
 		else{
 			$nvMdp = $_REQUEST['nouveauMdp'];
 			$idVisiteur = $_SESSION['idVisiteur'];

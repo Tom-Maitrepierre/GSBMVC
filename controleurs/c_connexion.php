@@ -12,13 +12,14 @@ switch($action){
 	case 'valideConnexion':{
 		$login = $_REQUEST['login'];
 		$mdp = $_REQUEST['mdp'];
+		$_SESSION['mdp'] = $mdp;
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
 		if(!is_array( $visiteur)){
 			ajouterErreur("Login ou mot de passe incorrect","connexion");
 			include("vues/v_connexion.php");
 		}
 		else{
-		$vinfo = $pdo->getInfoVaffe();
+		$vinfo = $pdo->getInfoVaffe($login);
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
