@@ -44,6 +44,14 @@ if (isset($_REQUEST['erreurs']))
     <input type="checkbox" id="test" name="dateEmbauche" value="">
     <label for="test">Date d'embauche</label>
   </div>
+  <div>
+    <input type="checkbox" id="test" name="tel" value="">
+    <label for="test">Téléphone</label>
+  </div>
+  <div>
+    <input type="checkbox" id="test" name="mail" value="">
+    <label for="test">Adresse Mail</label>
+  </div>
          </div>
 
             <button type="submit" class="btn btn-primary">Créer</button>
