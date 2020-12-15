@@ -8,9 +8,18 @@ if (isset($_REQUEST['erreurs']))
             }
      }
 ?>
-      <form class="form-vertical" method="post" action="index.php?uc=ajoutVisiteur&action=creer">  
+      <form class="form-vertical" method="post" action="index.php?uc=ajoutVisiteur&action=validerCreer">  
          <fieldset>
-             <legend>Veuillez entrer votre nom:</legend>
+         
+        <legend>Veuillez entrer votre ID :</legend>
+         <div class="form-group"> 
+           <label for="id">Identifiant*</label>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <input class="form-control" id="id"  type="text"  name="id" size="30" maxlength="45" required>
+            </div>
+        </div><br>
+             <legend>Veuillez entrer votre nom :</legend>
      <div class="form-group">   
          <div class="row">
          <div class="col-xs-12 col-sm-6 col-md-4">
@@ -19,7 +28,7 @@ if (isset($_REQUEST['erreurs']))
             </div>
             </div>
          </div>
-         <legend>Veuillez entrer votre prenom:</legend>
+         <legend>Veuillez entrer votre prenom :</legend>
          <div class="form-group"> 
            <label for="prenom">Prenom*</label>
         <div class="row">
@@ -28,16 +37,16 @@ if (isset($_REQUEST['erreurs']))
             </div>
         </div>
         </div>
-        <legend>Veuillez entrer votre pseudo:</legend>
+        <legend>Veuillez entrer votre pseudo :</legend>
          <div class="form-group"> 
            <label for="pseudo">Pseudo*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <input class="form-control" id="pseudo"  type="text"  name="pseudo" size="30" maxlength="45" placeholder="Pseudo GAMING"  required>
+                <input class="form-control" id="pseudo"  type="text"  name="pseudo" size="30" maxlength="45"  required>
             </div>
         </div>
         </div>
-         <legend>Veuillez entrer votre mdp:</legend>
+         <legend>Veuillez entrer votre mdp :</legend>
          <div class="form-group"> 
            <label for="newmdp">Mot de passe*</label>
         <div class="row">
@@ -55,7 +64,7 @@ if (isset($_REQUEST['erreurs']))
         </div>
         </div>
         
-        <legend>Veuillez entrer votre adresse:</legend>
+        <legend>Veuillez entrer votre adresse :</legend>
          <div class="form-group"> 
            <label for="adresse">Adresse*</label>
         <div class="row">
@@ -64,16 +73,16 @@ if (isset($_REQUEST['erreurs']))
             </div>
         </div>
         </div>
-        <legend>Veuillez entrer votre Code Postal:</legend>
+        <legend>Veuillez entrer votre Code Postal :</legend>
          <div class="form-group"> 
            <label for="cp">Code Postal*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <input class="form-control" id="cp"  type="text"  name="cp" size="30" maxlength="45" pattern="[0-9]{6}" required>
+                <input class="form-control" id="cp"  type="text"  name="cp" size="30" maxlength="45" pattern="[0-9]{5}" required>
             </div>
         </div>
         </div>
-        <legend>Veuillez entrer votre ville:</legend>
+        <legend>Veuillez entrer votre ville :</legend>
          <div class="form-group"> 
            <label for="ville">Ville*</label>
         <div class="row">
@@ -82,12 +91,30 @@ if (isset($_REQUEST['erreurs']))
             </div>
         </div>
         </div>
-        <legend>Veuillez entrer votre date d'embauche:</legend>
+        <legend>Veuillez entrer votre date d'embauche :</legend>
          <div class="form-group"> 
            <label for="datemb">Date d'embauche*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <input class="form-control" id="datemb"  type="text"  name="datemb" size="30" maxlength="45" required>
+            </div>
+        </div>
+        </div>
+        <legend>Veuillez entrer votre numéro de téléphone :</legend>
+         <div class="form-group"> 
+           <label for="tel">téléphone*</label>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <input class="form-control" id="tel"  type="text"  name="tel" size="30" maxlength="45" required>
+            </div>
+        </div>
+        </div>
+        <legend>Veuillez entrer votre adresse mail :</legend>
+         <div class="form-group"> 
+           <label for="mail">Adresse Mail*</label>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <input class="form-control" id="mail"  type="text"  name="mail" size="30" maxlength="45" required>
             </div>
         </div>
         </div>

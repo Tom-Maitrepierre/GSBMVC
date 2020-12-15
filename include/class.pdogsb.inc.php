@@ -406,4 +406,22 @@ class PdoGsb{
 			$laLigne  = $req->fetchAll();
 			return $laLigne;
 		}
+
+		public function ajoutVisiteur($id, $nom, $prenom, $login, $mdp, $adresse, $cp, $ville, $dateEmbauche, $tel, $mail){
+			$strReq ="INSERT INTO visiteur(id, nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche, tel, mail)Values(:id, :nom, :prenom, :login, :mdp, :adresse, :cp, :ville, :dateEmbauche, :tel, :mail)";
+			$req = $this->monPdo->prepare($strReq);
+		$req->bindParam(':id',$id);
+		$req->bindParam(':nom',$nom);
+		$req->bindParam(':prenom',$prenom);
+		$req->bindParam(':login',$login);
+		$req->bindParam(':mdp',$mdp);
+		$req->bindParam(':adresse',$adresse);
+		$req->bindParam(':cp',$cp);
+		$req->bindParam(':ville',$ville);
+		$req->bindParam(':dateEmbauche',$dateEmbauche);
+		$req->bindParam(':tel',$tel);
+		$req->bindParam(':mail',$mail);
+		
+		$req->execute();
+		}
 	}
