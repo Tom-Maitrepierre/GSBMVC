@@ -19,7 +19,7 @@ switch($action){
 			include("vues/v_connexion.php");
 		}
 		else{
-		$vinfo = $pdo->getInfoVaffe();
+		$vinfo = $pdo->getInfoVaffe($login);
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];

@@ -61,13 +61,13 @@ class PdoGsb{
 		$req->bindParam(':mdp', $hachMdp);
 		$req->execute();
 		$ligne  = $req->fetch();
-		
 		return $ligne;
 	}
 
-	public function getInfoVaffe(){
-		$strReq = "select tra_role, reg_nom, sec_nom, sec_code, tra_reg from vaffectation";	
+	public function getInfoVaffe($login){
+		$strReq = "select tra_role, reg_nom, sec_nom, sec_code, tra_reg from vaffectation inner join visiteur on id = idVisiteur where login = :login";	
 		$req = $this->monPdo->prepare($strReq);
+		$req->bindParam(':login', $login);
 		$req->execute();
 		$ligne  = $req->fetch();
 		
