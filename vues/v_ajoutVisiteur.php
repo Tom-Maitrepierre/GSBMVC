@@ -34,7 +34,7 @@ if (isset($_REQUEST['erreurs']))
            <label for="pseudo">Pseudo*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <input class="form-control" id="pseudo"  type="text"  name="pseudo" size="30" maxlength="45"  required>
+                <input class="form-control" id="pseudo"  type="text"  name="pseudo" size="30" maxlength="45" placeholder="Pseudo GAMING"  required>
             </div>
         </div>
         </div>
