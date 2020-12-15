@@ -28,7 +28,6 @@ function connecter($id,$nom,$prenom, $role, $region, $secteur, $codeSecteur, $co
 	$_SESSION['region']= $region;
 	$_SESSION['secteur']= $secteur;
 	$_SESSION['codeSec']= $codeSecteur;
-	$_SESSION['codeSec']= $codeSecteur;
 	$_SESSION['codeReg']= $codeRegion;
 }
 /**

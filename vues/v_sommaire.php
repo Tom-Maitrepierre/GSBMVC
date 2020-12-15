@@ -35,6 +35,10 @@
                     <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
                 </li>
             </ul>
+            <p class="erreur" style ="color: red !important;">
+            <?php if(strlen($_SESSION['mdp'])<8){
+				echo 'Il est conseillé que le mot de passe fasse minimum 8 caratères';
+			} ?></p>
 
         </nav>
         <div id="contenu" class="col-md-10">

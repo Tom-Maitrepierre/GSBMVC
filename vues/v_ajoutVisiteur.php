@@ -1,6 +1,4 @@
-<div class="row">
-               
-    <div class ="col-md-12 col-md-offset-2" id="contenu">
+
 <?php 
 if (isset($_REQUEST['erreurs'])) 
     {    
@@ -14,10 +12,11 @@ if (isset($_REQUEST['erreurs']))
          <fieldset>
              <legend>Veuillez entrer votre nom:</legend>
      <div class="form-group">   
-         <label for="nom">Nom*</label>
          <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-4">
          <label for="nom">Entrer votre nom: </label>
              <input class="form-control"  id="nom" type="text" name="nom"  size="30" maxlength="45"  required>
+            </div>
             </div>
          </div>
          <legend>Veuillez entrer votre prenom:</legend>
@@ -43,7 +42,7 @@ if (isset($_REQUEST['erreurs']))
            <label for="newmdp">Mot de passe*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <input class="form-control" id="newmdp"  type="password"  name="newmdp" size="30" maxlength="45" placeholder="Mot de passe" required>
+                <input class="form-control" id="newmdp"  type="password"  name="newmdp" size="30" maxlength="45"  required>
             </div>
         </div>
         </div>
@@ -51,7 +50,7 @@ if (isset($_REQUEST['erreurs']))
            <label for="newmdp">Confirmer le mot de passe*</label>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <input class="form-control" id="newmdp"  type="password"  name="newmdp" size="30" maxlength="45" placeholder="Mot de passe" required>
+                <input class="form-control" id="newmdp"  type="password"  name="newmdp" size="30" maxlength="45"  required>
             </div>
         </div>
         </div>
