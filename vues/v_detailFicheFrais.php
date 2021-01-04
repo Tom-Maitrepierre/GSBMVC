@@ -1,4 +1,4 @@
-<form method="POST" action="index.php?uc=validerFicheDeFrais&action=detailFicheFrais">
+<form method="POST" action="index.php?uc=validerFicheDeFrais&action=validerFicheFrais">
     <table class="table table-bordered">
         <caption>Eléments forfaitisés </caption>
         <thead>

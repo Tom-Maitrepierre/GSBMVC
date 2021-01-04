@@ -1,4 +1,4 @@
-<form method="POST" action="index.php?uc=validerFicheDeFrais&action=afficheVue">
+<form method="POST" action="index.php?uc=validerFicheDeFrais&action=detailFicheFrais">
     <h2>Valider fiche de frais</h2>
     <?php
     if (isset($_REQUEST['erreurs'])) {
@@ -24,11 +24,13 @@
                     <?php
                     $idVisiteur = $unelisteFiche['idVisiteur'];
                     ?>
-                    <td> <?php echo $idVisiteur ?></td>
+                    <td> <?php echo $idVisiteur ?>
+                    <input type="hidden" id="idVisiteur" name="idVisiteur" value="<?php echo $idVisiteur?>" /></td>
                     <?php
                     $mois = $unelisteFiche['mois'];
                     ?>
-                    <td> <?php echo $mois ?></td>
+                    <td> <?php echo $mois ?>
+                    <input type="hidden" id="mois" name="mois" value="<?php echo $mois?>" /></td>
                     <?php
                     $montantValide = $unelisteFiche['montantValide'];
                     ?>

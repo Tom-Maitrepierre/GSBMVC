@@ -20,17 +20,21 @@ switch($action){
              if(!is_array( $listeFiche)){
 			ajouterErreur("Fiche frais non disponible","");
           } 
-          include("vues/v_validerFicheDeFrais.php");         
+          include("vues/v_validerFicheDeFrais.php");
         } 
         break;
      }
      case 'detailFicheFrais':{
+          $idVisiteur = $_REQUEST['idVisiteur'];
+          $leMois = $_REQUEST['mois']; 
 		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$leMois);
           $lesFraisForfait= $pdo->getLesFraisForfait($idVisiteur,$leMois);
-          if(!is_array( $lesFraisHorsForfait,$lesFraisForfait)){
+          if(!is_array( $lesFraisHorsForfait || $lesFraisForfait)){
 			ajouterErreur("Détail Fiche frais non disponible","");	
-		}
-		include("vues/v_detailFicheFrais.php");
+          }
+          else {
+          include("vues/v_detailFicheFrais.php");
+          }
 	}
 }
 ?>
