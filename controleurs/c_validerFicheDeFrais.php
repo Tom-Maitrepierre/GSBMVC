@@ -10,21 +10,27 @@ switch($action){
              $region = $_SESSION['codeReg'];
              $listeFiche = $pdo->getFicheFraisDelegueCL($region);
              if(!is_array( $listeFiche)){
-			ajouterErreur("Fiche frais non disponible","");
-			include("vues/v_validerFicheDeFrais.php");
+			ajouterErreur("Fiche frais non disponible","");	
 		}
-            
+            include("vues/v_validerFicheDeFrais.php");
         }
         else if($role == 'Responsable'){
              $secteur = $_SESSION['codeSec'];
              $listeFiche = $pdo->getFicheFraisResponsableCL($secteur);
              if(!is_array( $listeFiche)){
 			ajouterErreur("Fiche frais non disponible","");
-			include("vues/v_validerFicheDeFrais.php");
-		}          
-        }
-        	include("vues/v_validerFicheDeFrais.php");
-		break;
+          } 
+          include("vues/v_validerFicheDeFrais.php");         
+        } 
+        break;
+     }
+     case 'detailFicheFrais':{
+		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$leMois);
+          $lesFraisForfait= $pdo->getLesFraisForfait($idVisiteur,$leMois);
+          if(!is_array( $lesFraisHorsForfait,$lesFraisForfait)){
+			ajouterErreur("Détail Fiche frais non disponible","");	
+		}
+		include("vues/v_detailFicheFrais.php");
 	}
 }
 ?>
